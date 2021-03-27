@@ -27,7 +27,7 @@ for (let i = 0; i < boxes.length; i++) {
                         boxes[currentBoxPosition].style.background = "grey";
                     }
                     flag = true;
-                }, 800);
+                }, 1200);
                 count++;
                 document.getElementById('count').innerHTML = `${count}`
             }
