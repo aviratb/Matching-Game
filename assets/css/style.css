@@ -1,9 +1,14 @@
+body {
+    margin: auto;
+    width: 34%;
+}
+
 h1 {
     color: green;
 }
 
 #count {
-    color: red;
+    color: rgb(221, 55, 55);
 }
 
 .grid-container {

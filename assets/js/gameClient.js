@@ -1,14 +1,20 @@
 let boxes = document.querySelectorAll('.grid-container div');
-let colors = ['blue', 'red', 'brown', 'yellow', 'white', 'green', 'black', 'pink',
-    'yellow', 'green', 'red', 'brown', 'black', 'pink', 'blue', 'white'];
+let totalCount = document.getElementById('count');
+let colors = ['silver', 'white', 'brown', 'yellow', 'white', 'pink', 'black', 'pink',
+    'yellow', 'green', 'orange', 'brown', 'black', 'green', 'silver', 'orange'];
 let prevColor, currentColor, prevBoxPosition, currentBoxPosition;
 let count = 0, j = 0;
 let flag = true;
+totalCount.innerHTML = `${count}`;
 
 for (let i = 0; i < boxes.length; i++) {
+
     boxes[i].onclick = function (event) {
+
         event.preventDefault();
+
         if (flag) {
+
             flag = false;
             this.style.background = colors[i];
 
@@ -27,9 +33,9 @@ for (let i = 0; i < boxes.length; i++) {
                         boxes[currentBoxPosition].style.background = "grey";
                     }
                     flag = true;
-                }, 1200);
+                }, 1000);
                 count++;
-                document.getElementById('count').innerHTML = `${count}`
+                totalCount.innerHTML = `${count}`
             }
 
             j++;
