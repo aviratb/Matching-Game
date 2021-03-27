@@ -1,8 +1,8 @@
 let boxes = document.querySelectorAll('.grid-container div');
 let totalCount = document.getElementById('count');
 let colors = ['silver', 'white', 'brown', 'yellow', 'white', 'pink', 'black', 'pink',
-    'yellow', 'green', 'orange', 'brown', 'black', 'green', 'silver', 'orange'];
-let prevColor, currentColor, prevBoxPosition, currentBoxPosition;
+    'yellow', 'green', 'blue', 'brown', 'black', 'green', 'silver', 'blue'];
+let prevColor, currentColor, prevBoxPosition, currentBoxPosition, matchedBoxes = 0;
 let count = 0, j = 0;
 let flag = true;
 totalCount.innerHTML = `${count}`;
@@ -27,15 +27,23 @@ for (let i = 0; i < boxes.length; i++) {
             if (j % 2 == 1) {
                 currentColor = colors[i];
                 currentBoxPosition = i;
-                setTimeout(() => {
-                    if (prevColor != currentColor) {
+                if (prevColor != currentColor) {
+                    setTimeout(() => {
                         boxes[prevBoxPosition].style.background = "grey";
                         boxes[currentBoxPosition].style.background = "grey";
-                    }
+                        flag = true;
+                    }, 1000);
+                }
+                else {
+                    matchedBoxes += 2;
                     flag = true;
-                }, 1000);
+                }
                 count++;
                 totalCount.innerHTML = `${count}`
+            }
+
+            if (matchedBoxes == 16) {
+                flag = false;
             }
 
             j++;
