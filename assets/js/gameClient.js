@@ -26,7 +26,6 @@ for (let i = 0; i < boxes.length; i++) {
     }
 }
 
-
 // Animation on scroll
 window.onload = function () {
     AOS.init({

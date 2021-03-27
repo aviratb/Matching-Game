@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/abc', express.static('assets'));
-app.use('/matching_game', game);
+app.use('/', game);
 
 app.listen(port, () => {
     console.log(`Server is running on port : http://localhost:${port}`)
