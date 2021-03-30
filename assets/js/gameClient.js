@@ -34,9 +34,9 @@ for (let i = 0; i < boxes.length; i++) {
                     }, 1000);
                 }
                 else {
-                    matchedBoxes += 2;
                     boxes[prevBoxPosition].onclick = false;
                     boxes[currentBoxPosition].onclick = false;
+                    matchedBoxes += 2;
                     flag = true;
                 }
                 count++;
